@@ -56,9 +56,9 @@ Your contributor file should be named `contributors/{your-github-username}.json`
 
 If you want to test the build process locally:
 
-```bash
+```
 npm run build
-`
+```
 This will regenerate `data.json` from all the contributor files.
 
 ---
