@@ -1,239 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Contribution - Contributors</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bude Global – First Contribution</title>
+  
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    :root {
+      --bude-dark: #0d47a1;
+      --bude-light: #42a5f5;
+      --bude-bg: linear-gradient(135deg, #0d47a1 0%, #42a5f5 100%);
+      --bude-card: #ffffff;
+      --bude-font: "Inter", "Poppins", "Segoe UI", sans-serif;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    body {
+      font-family: var(--bude-font);
+      background: var(--bude-bg);
+      color: #222;
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-        header {
-            text-align: center;
-            color: white;
-            margin-bottom: 50px;
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      flex: 1;
+    }
 
-        h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
+    header {
+      text-align: center;
+      color: white;
+      margin-bottom: 40px;
+    }
 
-        .subtitle {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
 
-        .contributors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
+    .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
 
-        .contributor-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
+    .cta {
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      margin-bottom: 50px;
+    }
 
-        .contributor-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
+    .cta h2 {
+      color: var(--bude-dark);
+      margin-bottom: 10px;
+    }
 
-        .avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #667eea;
-            margin-bottom: 20px;
-        }
+    .cta p {
+      color: #444;
+      margin-bottom: 20px;
+    }
 
-        .github-username {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 15px;
-            text-decoration: none;
-            display: inline-block;
-            transition: color 0.3s ease;
-        }
+    .cta a {
+      display: inline-block;
+      background: var(--bude-bg);
+      color: white;
+      padding: 14px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
 
-        .github-username:hover {
-            color: #667eea;
-        }
+    .cta a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(66, 165, 245, 0.4);
+    }
 
-        .quote {
-            font-style: italic;
-            color: #666;
-            line-height: 1.6;
-            position: relative;
-        }
+    .contributors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 30px;
+    }
 
-        .quote::before {
-            content: '"';
-            font-size: 2em;
-            color: #667eea;
-            position: absolute;
-            left: -15px;
-            top: -10px;
-        }
+    .contributor-card {
+      background: var(--bude-card);
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .quote::after {
-            content: '"';
-            font-size: 2em;
-            color: #667eea;
-        }
+    .contributor-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(13, 71, 161, 0.3);
+    }
 
-        .loading {
-            text-align: center;
-            color: white;
-            font-size: 1.5em;
-            padding: 50px;
-        }
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid var(--bude-light);
+      margin-bottom: 15px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
 
-        .error {
-            background: #ff6b6b;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            margin: 20px 0;
-        }
+    .contributor-card:hover .avatar {
+      transform: scale(1.05);
+    }
 
-        .cta {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 40px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
+    .github-username {
+      display: block;
+      font-weight: 700;
+      color: var(--bude-dark);
+      text-decoration: none;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
 
-        .cta h2 {
-            color: #333;
-            margin-bottom: 15px;
-        }
+    .github-username:hover {
+      color: var(--bude-light);
+    }
 
-        .cta p {
-            color: #666;
-            margin-bottom: 20px;
-        }
+    .quote {
+      font-style: italic;
+      color: #555;
+    }
 
-        .cta a {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.3s ease;
-        }
+    .loading {
+      text-align: center;
+      color: white;
+      font-size: 1.4rem;
+      padding: 40px;
+    }
 
-        .cta a:hover {
-            transform: scale(1.05);
-        }
-        
-        /* space between multiple CTA buttons */
-        .cta a + a {
-            margin-left: 12px;
-        }
-    </style>
+    .error {
+      background: #ff6b6b;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+.logo-section {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.bude-logo {
+    height: 70px;
+    width: auto;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+    transition: transform 0.3s ease;
+}
+
+.bude-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Sticky footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(115, 105, 255, 0.7);
+    backdrop-filter: blur(8px);
+    color: white;
+    padding: 18px 10px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    z-index: 1000;
+}
+
+footer .social-links {
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: white;
+    margin: 0 8px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    vertical-align: middle;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+footer a:hover {
+    color: #90caf9;
+    transform: scale(1.1);
+}
+
+/* Brand link avatar */
+footer .brand-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.brand-avatar {
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 2px solid #90caf9;
+    object-fit: cover;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #cfd8dc;
+    margin-top: 5px;
+}
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🎉 First Contribution</h1>
-            <p class="subtitle">Thank you to all our amazing contributors!</p>
-        </header>
+  <div class="container">
+    <header>
+        <div class="logo-section">
+        <a href="https://budeglobal.in" target="_blank">
+            <img src="https://github.com/BUDEGlobalEnterprise.png" alt="Bude Global Logo" class="bude-logo">
+        </a>
+    </div>
+      <h1>🎉 Bude Global – First Contribution</h1>
+      <p class="subtitle">Thank you to all our amazing contributors!</p>
+    </header>
 
-        <div class="cta">
-            <h2>Want to see your name here?</h2>
-            <p>Make your first contribution by adding yourself to our contributors list!</p>
-            <a href="https://github.com/budeglobalenterprise/first-contribution#readme">Learn How to Contribute</a>
-        </div>
-
-        <div id="loading" class="loading">Loading contributors...</div>
-        <div id="error" class="error" style="display: none;"></div>
-        <div id="contributors" class="contributors-grid"></div>
+    <div class="cta">
+      <h2>Want to see your name here?</h2>
+      <p>Make your first open-source contribution and join the Bude Global community of innovators.</p>
+      <a href="https://github.com/budeglobalenterprise/bude-first-contribution#readme" target="_blank">
+        Learn How to Contribute
+      </a>
     </div>
 
-    <script>
-        async function loadContributors() {
-            try {
-                const response = await fetch('data.json');
-                if (!response.ok) {
-                    throw new Error('Failed to load contributors');
-                }
-                const contributors = await response.json();
-                
-                document.getElementById('loading').style.display = 'none';
-                
-                const container = document.getElementById('contributors');
-                
-                contributors.forEach(contributor => {
-                    const card = document.createElement('div');
-                    card.className = 'contributor-card';
-                    
-                    const avatar = document.createElement('img');
-                    avatar.className = 'avatar';
-                    avatar.src = contributor.photo || `https://github.com/${contributor.github}.png`;
-                    avatar.alt = `${contributor.github}'s avatar`;
-                    avatar.onerror = function() {
-                        this.src = 'https://github.com/github.png';
-                    };
-                    
-                    const username = document.createElement('a');
-                    username.className = 'github-username';
-                    username.href = `https://github.com/${contributor.github}`;
-                    username.target = '_blank';
-                    username.textContent = `@${contributor.github}`;
-                    
-                    const quote = document.createElement('p');
-                    quote.className = 'quote';
-                    quote.textContent = contributor.quote;
-                    
-                    card.appendChild(avatar);
-                    card.appendChild(username);
-                    card.appendChild(quote);
-                    
-                    container.appendChild(card);
-                });
-            } catch (error) {
-                document.getElementById('loading').style.display = 'none';
-                const errorDiv = document.getElementById('error');
-                errorDiv.textContent = 'Failed to load contributors. Please try again later.';
-                errorDiv.style.display = 'block';
-                console.error('Error loading contributors:', error);
-            }
-        }
+    <div id="loading" class="loading">Loading contributors...</div>
+    <div id="error" class="error" style="display: none;"></div>
+    <div id="contributors" class="contributors-grid"></div>
+  </div>
+<footer>
+    <div class="social-links">
+        <a href="https://budeglobal.in" target="_blank" class="brand-link">
+            <img src="https://github.com/BUDEGlobalEnterprise.png" alt="Bude Global Avatar" class="brand-avatar">
+        </a> | 
+        <a href="https://blog.budeglobal.in" title="Bude Global Blog"><i class="ri-earth-line"></i></a>
+        <a href="https://github.com/budeglobalenterprise/bude-first-contribution" title="Project Repo" target="_blank"><i class="ri-git-repository-fill"></i></a>
+        <a href="https://github.com/budeglobalenterprise" title="GitHub"><i class="ri-github-fill"></i></a>
+        <a href="https://linkedin.com/company/budeglobal" title="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
+        <a href="https://www.youtube.com/@BudeGlobalEnterprise" title="YouTube"><i class="ri-youtube-fill"></i></a>
+        <a href="https://x.com/budeglobalerp" title="Twitter/X"><i class="ri-twitter-x-line"></i></a>
+        <a href="https://www.instagram.com/budeglobal" title="Instagram"><i class="ri-instagram-line"></i></a>
+    </div>
+    <p>© 2025 Bude Global Enterprise — Built with ❤️ for Open Collaboration</p>
+</footer>
 
-        loadContributors();
-    </script>
+  <script>
+    async function loadContributors() {
+      const loading = document.getElementById("loading");
+      const errorDiv = document.getElementById("error");
+      const container = document.getElementById("contributors");
+
+      try {
+        const response = await fetch("data.json");
+        if (!response.ok) throw new Error("No local data found");
+
+        const contributors = await response.json();
+        renderContributors(contributors);
+      } catch (localError) {
+        try {
+          // fallback to GitHub API if no data.json
+          const res = await fetch("https://api.github.com/repos/budeglobalenterprise/bude-first-contribution/contributors");
+          const githubContributors = await res.json();
+          const mapped = githubContributors.map(c => ({
+            github: c.login,
+            photo: c.avatar_url,
+            quote: "Proud to contribute to Bude Global!"
+          }));
+          renderContributors(mapped);
+        } catch (apiError) {
+          loading.style.display = "none";
+          errorDiv.style.display = "block";
+          errorDiv.textContent = "Failed to load contributors. Please try again later.";
+        }
+      }
+
+      function renderContributors(contributors) {
+        loading.style.display = "none";
+        contributors.forEach(contributor => {
+          const card = document.createElement("div");
+          card.className = "contributor-card";
+
+          const avatar = document.createElement("img");
+          avatar.className = "avatar";
+          avatar.src = contributor.photo || `https://github.com/${contributor.github}.png`;
+          avatar.alt = contributor.github;
+
+          const username = document.createElement("a");
+          username.className = "github-username";
+          username.href = `https://github.com/${contributor.github}`;
+          username.target = "_blank";
+          username.textContent = `@${contributor.github}`;
+
+          const quote = document.createElement("p");
+          quote.className = "quote";
+          quote.textContent = contributor.quote || "Excited to be part of Bude Global!";
+
+          card.append(avatar, username, quote);
+          container.appendChild(card);
+        });
+      }
+    }
+
+    loadContributors();
+  </script>
 </body>
 </html>
